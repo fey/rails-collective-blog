@@ -1,7 +1,11 @@
 .PHONY: test
 
+setup: install
+
 install:
 	bin/setup
+
+check: lint test
 
 lint:
 	bundle exec rubocop

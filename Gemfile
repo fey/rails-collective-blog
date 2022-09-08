@@ -40,4 +40,6 @@ end
 
 group :production do
   gem 'pg'
+  gem "sentry-ruby"
+  gem "sentry-rails"
 end

@@ -33,6 +33,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'minitest-power_assert'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

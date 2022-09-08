@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'slim_lint'
+  gem 'slimcop'
 end
 
 group :development do

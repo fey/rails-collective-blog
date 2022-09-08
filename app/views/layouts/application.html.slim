@@ -6,14 +6,14 @@ html class="h-100"
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_importmap_tags
   body.d-flex.flex-column.h-100
     .container.mb-2
       .d-flex.flex-wrap.align-items-center.py-2.border-bottom
         .navbar.navbar-expand-md.navbar-light.me-auto
           a.navbar-brand.me-md-4 href="/"
-            = image_tag "hexlet.png", width: "30", alt: "Логотип Хекслета"
+            = image_tag 'hexlet.png', width: '30', alt: 'Логотип Хекслета'
         ul.nav.nav-pills
           li.nav-item.me-2
             a.nav-link.link-dark href="/users/sign_in"  Войти

@@ -8,6 +8,10 @@ ruby '3.1.2'
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.1.3'
 gem 'devise'
+gem 'devise-bootstrap5'
+gem 'devise-i18n'
+gem 'rails-i18n'
+
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'puma', '~> 5.0'
@@ -32,6 +36,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'i18n-debug'
   gem 'solargraph'
   gem 'web-console'
 end

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
-    @comment = current_user.post_comments.build
+    @comment = current_user&.post_comments&.build
   end
 
   def new

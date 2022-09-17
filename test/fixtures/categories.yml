@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 news:
-  name: News
+  name: Новости
 
 development:
-  name: Development
+  name: Разработка

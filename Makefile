@@ -5,6 +5,9 @@ setup: install
 install:
 	bin/setup
 
+start:
+	
+
 check: lint test
 
 lint:

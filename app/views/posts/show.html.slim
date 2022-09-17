@@ -33,3 +33,11 @@ ol.breadcrumb
       .card-body
         p.card-text = comment.content
         = link_to t('.response'), '#', class: 'btn btn-primary btn-sm'
+p
+  a.btn.btn-primary aria-controls="collapseExample" aria-expanded="false" data-bs-toggle="collapse" href="#collapseExample" role="button"
+    | Link with href
+  button.btn.btn-primary aria-controls="collapseExample" aria-expanded="false" data-bs-target="#collapseExample" data-bs-toggle="collapse" type="button"
+    | Button with data-bs-target
+#collapseExample.collapse
+  .card.card-body
+    | Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.

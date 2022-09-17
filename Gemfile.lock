@@ -249,6 +249,8 @@ GEM
       rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -310,8 +312,6 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.5.0-x86_64-linux)
-    stimulus-rails (1.1.0)
-      railties (>= 6.0.0)
     strscan (3.0.4)
     templatecop (0.3.0)
       parallel
@@ -370,6 +370,7 @@ DEPENDENCIES
   rubocop
   rubocop-performance
   rubocop-rails
+  sass-rails
   selenium-webdriver
   sentry-rails
   sentry-ruby
@@ -381,7 +382,6 @@ DEPENDENCIES
   solargraph
   sprockets-rails
   sqlite3 (~> 1.4)
-  stimulus-rails
   tzinfo-data
   web-console
   webdrivers

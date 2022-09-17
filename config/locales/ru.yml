@@ -12,6 +12,8 @@ ru:
     new:
       title: Новый пост
       submit: Опубликовать
+    show:
+      all_posts: Все посты
   activerecord:
     models:
       post: Пост

@@ -1,0 +1,7 @@
+- content_for :title, t('.title')
+= simple_form_for @post do |f|
+  = f.input :title
+  = f.input :category, as: :select, collection: @categories, label_html: { class: 'mt-3' }
+  = f.input :body, input_html: { rows: 10 },
+                   label_html: { class: 'mt-3' }
+  = f.button :submit, t('.submit'), class: 'btn-primary mt-3'

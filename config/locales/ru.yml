@@ -5,3 +5,18 @@ ru:
       sign_out: Выйти
       sign_in: Войти
       sign_up: Зарегистрироваться
+      add_post: Новый пост
+  posts:
+    index:
+      title: Коллективный блог
+    new:
+      title: Новый пост
+      submit: Опубликовать
+  activerecord:
+    models:
+      post: Пост
+    attributes:
+      post:
+        body: Содержание
+        title: Заголовок
+        category: Категория

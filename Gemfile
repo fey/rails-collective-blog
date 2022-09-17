@@ -11,6 +11,7 @@ gem 'devise'
 gem 'devise-bootstrap5'
 gem 'devise-i18n'
 gem 'rails-i18n'
+gem 'simple_form'
 
 gem 'importmap-rails'
 gem 'jbuilder'

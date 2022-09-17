@@ -20,3 +20,9 @@ ru:
         body: Содержание
         title: Заголовок
         category: Категория
+  simple_form:
+    hints:
+      post:
+        new:
+          body: От 200 до 4000 символов
+          title: 5-255 символов

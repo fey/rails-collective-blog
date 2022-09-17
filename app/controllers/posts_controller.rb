@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
+    @comment = current_user.post_comments.build
   end
 
   def new
@@ -16,8 +17,8 @@ class PostsController < ApplicationController
 
   def create
     @categories = Category.all
-    @post = Post.create post_params
-    @post.creator = current_user
+    @post = current_user.posts.build(post_params)
+    # @post = Post.create post_params
 
     if @post.save!
       redirect_to @post

@@ -19,3 +19,8 @@ lint-fix:
 
 test:
 	bin/rails test
+
+build:
+	bundle install
+	yarn install
+	bin/rails webpacker:compile

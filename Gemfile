@@ -7,15 +7,12 @@ ruby '3.1.2'
 
 gem 'ancestry'
 gem 'bootsnap', require: false
-gem 'bootstrap', '~> 5.1.3'
 gem 'devise'
 gem 'devise-bootstrap5'
 gem 'devise-i18n'
 gem 'rails-i18n'
-gem 'sass-rails'
 gem 'simple_form'
 
-gem 'importmap-rails'
 gem 'jbuilder'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
@@ -23,7 +20,6 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'slim'
 gem 'slim-rails'
-gem 'sprockets-rails'
 gem 'sqlite3', '~> 1.4'
 # gem 'stimulus-rails'
 # gem 'turbo-rails'
@@ -55,3 +51,5 @@ end
 group :production do
   gem 'pg'
 end
+
+gem 'webpacker'

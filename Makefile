@@ -6,7 +6,7 @@ install:
 	bin/setup
 
 start:
-	bin/rails s
+	bin/dev
 
 check: lint test
 

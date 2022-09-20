@@ -12,5 +12,8 @@
   },
   "engines": {
     "node": "16.x"
+  },
+  "scripts": {
+    "build": "bin/rails webpacker:compile"
   }
 }

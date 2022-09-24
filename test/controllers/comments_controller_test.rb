@@ -11,7 +11,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   test '#create' do
     post_comment_params = {
       content: Faker::Lorem.sentence,
-      parent_id: @parent_comment.id,
+      parent_id: @parent_comment.id
     }
     sign_in @user
 

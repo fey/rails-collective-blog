@@ -5,7 +5,7 @@ module ApplicationHelper
     map = {
       notice: 'info',
       error: 'danger',
-      success: 'success',
+      success: 'success'
     }
     map.fetch(type.to_sym, 'info')
   end

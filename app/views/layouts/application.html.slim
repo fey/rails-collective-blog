@@ -5,14 +5,14 @@ html class='h-100'
     meta[name='viewport' content='width=device-width,initial-scale=1']
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag "application"
-    = javascript_pack_tag 'application'
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
   body.d-flex.flex-column.h-100
     .container.mb-2
       .d-flex.flex-wrap.align-items-center.py-2.border-bottom
         .navbar.navbar-expand-md.navbar-light.me-auto
           = link_to root_path, class: 'navbar-brand.me-md-4'
-            = image_pack_tag 'hexlet.png', width: '30', alt: 'Логотип Хекслета'
+            = image_tag 'hexlet.png', width: '30', alt: 'Логотип Хекслета'
         ul.nav.nav-pills
           - if user_signed_in?
             li.nav-item.me-2

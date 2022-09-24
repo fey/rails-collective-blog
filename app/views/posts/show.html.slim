@@ -20,11 +20,13 @@ ol.breadcrumb
   span = t('.comments')
   - if user_signed_in?
     = simple_form_for @comment, as: :post_comment do |f|
-      = f.input :content, as: :text
-      = f.button :submit
+      = f.input :content, as: :text, label: false
+      = f.association :post, as: :hidden, input_html: { value: @post.id }
+      = f.input :parent_id, as: :hidden, input_html: { value: nil }
+      = f.button :submit, class: 'btn-primary mt-2'
 
-  - @post.comments.each do |comment|
-    .card.my-4.ps-2
+  - @comments.each do |comment|
+    .card.my-4
       .card-header
         span.me-2
           = comment.creator.email
@@ -32,12 +34,19 @@ ol.breadcrumb
           = l(comment.created_at, format: :short)
       .card-body
         p.card-text = comment.content
-        = link_to t('.response'), '#', class: 'btn btn-primary btn-sm'
-p
-  a.btn.btn-primary aria-controls="collapseExample" aria-expanded="false" data-bs-toggle="collapse" href="#collapseExample" role="button"
-    | Link with href
-  button.btn.btn-primary aria-controls="collapseExample" aria-expanded="false" data-bs-target="#collapseExample" data-bs-toggle="collapse" type="button"
-    | Button with data-bs-target
-#collapseExample.collapse
-  .card.card-body
-    | Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      - if user_signed_in?
+        .card-footer
+          = simple_form_for @comment, as: :post_comment do |f|
+            = f.input :content, as: :text, label: false
+            = f.association :post, as: :hidden, input_html: { value: @post.id }
+            = f.input :parent_id, as: :hidden, input_html: { value: comment.id }
+            = f.button :submit, class: 'btn-sm btn-primary mt-2'
+    = render "posts/children_comments", comment: comment, post: @post
+/ p
+/   a.btn.btn-primary aria-controls="collapseExample" aria-expanded="false" data-bs-toggle="collapse" href="#collapseExample" role="button"
+/     | Link with href
+/   button.btn.btn-primary aria-controls="collapseExample" aria-expanded="false" data-bs-target="#collapseExample" data-bs-toggle="collapse" type="button"
+/     | Button with data-bs-target
+/ #collapseExample.collapse
+/   .card.card-body
+/     | Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.

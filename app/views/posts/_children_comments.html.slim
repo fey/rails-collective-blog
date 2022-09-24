@@ -1,0 +1,17 @@
+- comment.children.each do |comment|
+  .card.my-4.ms-4
+    .card-header
+      span.me-2
+        = comment.creator.email
+      span.fs-6.text-muted
+        = l(comment.created_at, format: :short)
+    .card-body
+      p.card-text = comment.content
+    - if user_signed_in?
+      .card-footer
+        = simple_form_for @comment, as: :post_comment do |f|
+          = f.input :content, as: :text, label: false
+          = f.association :post, as: :hidden, input_html: { value: @post.id }
+          = f.input :parent_id, as: :hidden, input_html: { value: comment.id }
+          = f.button :submit, class: 'btn-sm btn-primary mt-2'
+    = render 'posts/children_comments', comment: comment if comment.children.any?

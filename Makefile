@@ -4,6 +4,7 @@ setup: install
 
 install:
 	bin/setup
+	yarn
 
 start:
 	bin/dev
@@ -22,3 +23,8 @@ test:
 
 deploy:
 	railway up
+	railway run bin/rails db:migrate
+
+build:
+	yarn run build
+	yarn run build:css

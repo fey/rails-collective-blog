@@ -26,5 +26,4 @@ deploy:
 	railway run bin/rails db:migrate
 
 build:
-	yarn run build
-	yarn run build:css
+	bin/rails assets:precompile

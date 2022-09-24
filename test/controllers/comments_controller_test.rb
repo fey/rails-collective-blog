@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class PostCommentsControllerTest < ActionDispatch::IntegrationTest
+class CommentsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:feycot)
     @post = posts(:one)
@@ -12,15 +12,15 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
     post_comment_params = {
       content: Faker::Lorem.sentence,
       parent_id: @parent_comment.id,
-      post_id: @post.id
     }
     sign_in @user
 
-    post post_comments_url({ post_comment: post_comment_params })
+    post post_comments_url(@post, post_comment: post_comment_params)
 
     post_comment = PostComment.find_by({
                                          creator_id: @user.id,
                                          post_id: @post.id,
+                                         ancestry: @parent_comment.id,
                                          content: post_comment_params.fetch(:content)
                                        })
 

@@ -1,7 +1,7 @@
-class PostLikesController < ApplicationController
+class LikesController < ApplicationController
   def create
     authenticate_user!
-    post = Post.find(like_params[:post_id])
+    post = Post.find(params[:post_id])
 
     post.likes.find_or_create_by(user: current_user)
 
@@ -16,11 +16,5 @@ class PostLikesController < ApplicationController
 
     like&.delete
     redirect_to post
-  end
-
-  private
-
-  def like_params
-    params.require(:post_like).permit(:post_id)
   end
 end

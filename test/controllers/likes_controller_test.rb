@@ -1,6 +1,6 @@
 require "test_helper"
 
-class PostLikesControllerTest < ActionDispatch::IntegrationTest
+class LikesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:feycot)
     @post = posts(:two)
@@ -9,14 +9,14 @@ class PostLikesControllerTest < ActionDispatch::IntegrationTest
   end
   test "#create" do
     sign_in @user
-    post post_likes_url(post_like: { post_id: @post.id })
+    post post_likes_url(@post, post_like: { post_id: @post.id })
 
     assert_response :redirect
   end
 
   test "#destroy" do
     sign_in @user
-    delete post_like_url(@like)
+    delete post_like_url(@post, @like)
 
     assert_response :redirect
   end

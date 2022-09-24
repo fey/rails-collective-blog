@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
-class PostCommentsController < ApplicationController
+class CommentsController < ApplicationController
   def create
     authenticate_user!
-    @post = Post.find(post_comment_params[:post_id])
+    @post = Post.find(params[:post_id])
     @comments = @post.comments.roots.latest
     @comment = current_user.comments.build(post_comment_params)
+    @comment.post = @post
 
     if @comment.save
       flash[:success] = t('.success')

@@ -11,7 +11,7 @@ prepare-db:
 	bin/rails db:fixtures:load
 
 start:
-	bin/dev
+	RAILS_ENV=development bin/dev
 
 check: test lint
 

@@ -6,6 +6,9 @@ ru:
       sign_in: Войти
       sign_up: Зарегистрироваться
       add_post: Новый пост
+  comments:
+    create:
+      success: Комментарий опубликован
   posts:
     index:
       title: Коллективный блог
@@ -15,8 +18,8 @@ ru:
       submit: Опубликовать
     show:
       all_posts: Все посты
-      comments: Комментарии
     create:
+      success: Пост опубликован
       unprocessable_entity: Не удалось создать пост. Проверьте введенные данные
     comment_form:
       response: Ответить

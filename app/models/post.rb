@@ -2,6 +2,7 @@
 
 class Post < ApplicationRecord
   has_many :comments, class_name: 'PostComment', dependent: :destroy
+  has_many :likes, class_name: 'PostLike'
   belongs_to :creator, class_name: 'User'
   belongs_to :category, inverse_of: :posts
 

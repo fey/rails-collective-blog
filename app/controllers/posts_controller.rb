@@ -9,24 +9,30 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
     @comments = @post.comments.roots.latest
     @comment = current_user&.comments&.build
+    @user_like = @post.likes.find_by(user: current_user)
   end
 
   def new
+    authenticate_user!
     @post = Post.new
     @categories = Category.all
   end
 
   def create
+    authenticate_user!
     @categories = Category.all
     @post = current_user.posts.build(post_params)
-    # @post = Post.create post_params
 
-    if @post.save!
-      redirect_to @post
+    if @post.save
+      flash[:success] = t('.success')
+      redirect_to comment.post
     else
+      flash.now[:error] = t('.unprocessable_entity')
       render :new
     end
   end
+
+  private
 
   def post_params
     params.require(:post).permit(:title, :body, :category_id)

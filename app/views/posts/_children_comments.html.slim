@@ -10,6 +10,6 @@
       p.card-text = comment.content
     .card-footer.border-0
       - if user_signed_in?
-        = render 'comment_form', comment:
+        = render 'posts/comment_form', comment:
     - if comment.children.any?
       = render 'posts/children_comments', comment:

@@ -28,6 +28,7 @@ html class='h-100'
               = link_to t('.sign_up'), new_user_registration_path, class: 'nav-link link-dark'
 
     .container.my-4
+      = render 'shared/flash'
       - if content_for?(:title)
         h1 = yield :title
       = yield

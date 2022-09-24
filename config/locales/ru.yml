@@ -15,6 +15,8 @@ ru:
     show:
       all_posts: Все посты
       comments: Комментарии
+    create:
+      unprocessable_entity: Не удалось создать пост. Проверьте введенные данные
     comment_form:
       response: Ответить
   activerecord:
@@ -25,6 +27,8 @@ ru:
         body: Содержание
         title: Заголовок
         category: Категория
+      post_comment:
+        content: Тело комментария
   simple_form:
     hints:
       post:

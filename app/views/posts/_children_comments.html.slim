@@ -1,5 +1,5 @@
 - comment.children.each do |comment|
-  .card.my-4.ms-4.border-end-0.border-bottom-0.rounded-0
+  .card.ms-4.mt.border-end-0.border-bottom-0.rounded-0
     .card-header
       span.me-2
         = comment.creator.email
@@ -7,8 +7,8 @@
         = l(comment.created_at, format: :short)
     .card-body
       p.card-text = comment.content
-    - if user_signed_in?
-      .card-footer
-        = render partial: 'comment_form'
+    .card-footer
+      - if user_signed_in?
+        = render 'comment_form', comment:
     - if comment.children.any?
       = render 'posts/children_comments', comment:

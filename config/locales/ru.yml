@@ -14,6 +14,8 @@ ru:
       submit: Опубликовать
     show:
       all_posts: Все посты
+    comment_form:
+      response: Ответить
   activerecord:
     models:
       post: Пост
@@ -28,3 +30,8 @@ ru:
         new:
           body: От 200 до 4000 символов
           title: 5-255 символов
+
+  helpers:
+    submit:
+      post_comment:
+        create: Оставить комментарий

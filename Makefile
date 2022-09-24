@@ -19,7 +19,7 @@ lint-fix:
 	bundle exec rubocop -A
 
 test:
-	bin/rails test
+	RAILS_ENV=test bin/rails test
 
 deploy:
 	railway up

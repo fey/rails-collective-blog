@@ -1,13 +1,14 @@
 - comment.children.each do |comment|
-  .card.ms-4.mt.border-end-0.border-bottom-0.rounded-0
-    .card-header
+  .card.ms-4.border-end-0.border-bottom-0.border-top-1.rounded-0 id="comment-#{comment.id}"
+    .card-header.border-0
+      = link_to '#', "#comment-#{comment.id}", class: 'me-2'
       span.me-2
         = comment.creator.email
       span.fs-6.text-muted
         = l(comment.created_at, format: :short)
-    .card-body
+    .card-body.border-0
       p.card-text = comment.content
-    .card-footer
+    .card-footer.border-0
       - if user_signed_in?
         = render 'comment_form', comment:
     - if comment.children.any?

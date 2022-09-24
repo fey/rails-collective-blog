@@ -10,5 +10,5 @@
     = simple_form_for @comment, as: :post_comment do |f|
       = f.input :content, as: :text, label: false
       = f.association :post, as: :hidden, input_html: { value: @post.id }
-      = f.input :parent_id, as: :hidden, input_html: { value: nil }
+      = f.input :parent_id, as: :hidden, input_html: { value: comment.id }
       = f.button :submit, class: 'btn-primary mt-2'

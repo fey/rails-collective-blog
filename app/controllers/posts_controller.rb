@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
-    @comments = @post.comments.roots
+    @comments = @post.comments.roots.latest
     @comment = current_user&.comments&.build
   end
 

@@ -37,5 +37,5 @@ ol.breadcrumb
         p.card-text = comment.content
       - if user_signed_in?
         .card-footer.border-0
-            = render 'posts/comment_form', comment:
-      = render 'posts/children_comments', comment:
+            = render 'posts/comment_form', comment: comment
+      = render 'posts/children_comments', comment: comment

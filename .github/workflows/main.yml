@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+  RAILS_ENV: test
+
 jobs:
   build:
     runs-on: ubuntu-latest

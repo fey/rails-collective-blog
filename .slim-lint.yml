@@ -3,4 +3,4 @@ exclude:
 
 linters:
   LineLength:
-    max: 10
+    max: 180

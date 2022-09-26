@@ -37,6 +37,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     post posts_url, params: { post: post_params }
     assert_response :redirect
 
-    assert { Post.exists?(post_params) }
+    assert { Post.exists?(post_params.merge(creator: @user)) }
   end
 end

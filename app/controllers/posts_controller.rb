@@ -28,7 +28,7 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       flash.now[:error] = t('.unprocessable_entity')
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

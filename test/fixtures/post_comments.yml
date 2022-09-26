@@ -1,22 +1,22 @@
 # # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 one:
   content: first
-  creator: feycot
+  user: feycot
   post: one
 
 with_comments:
   content: this is comment with comments
-  creator: feycot
+  user: feycot
   post: one
 
 nested:
   content: commented comment
-  creator: feycot
+  user: feycot
   post: one
   ancestry: <%= ActiveRecord::FixtureSet.identify(:with_comments) %>
 
 deep_nested:
   content: deep comment
-  creator: feycot
+  user: feycot
   post: one
   ancestry: <%= [ActiveRecord::FixtureSet.identify(:with_comments), ActiveRecord::FixtureSet.identify(:nested)].join('/') %>

@@ -18,8 +18,8 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     post post_comments_url(@post, post_comment: post_comment_params)
 
     post_comment = PostComment.find_by({
-                                         creator_id: @user.id,
-                                         post_id: @post.id,
+                                         user: @user,
+                                         post: @post,
                                          ancestry: @parent_comment.id,
                                          content: post_comment_params.fetch(:content)
                                        })

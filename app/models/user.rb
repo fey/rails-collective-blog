@@ -11,7 +11,6 @@ class User < ApplicationRecord
                    foreign_key: 'creator_id',
                    dependent: :destroy
   has_many :comments, class_name: 'PostComment',
-                      foreign_key: 'creator_id',
-                      inverse_of: :creator,
+                      inverse_of: :user,
                       dependent: :destroy
 end

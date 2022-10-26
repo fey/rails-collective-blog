@@ -85,9 +85,13 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'ancestry'
+gem 'devise-bootstrap-views'
 gem 'devise'
 gem 'devise-i18n'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'bootstrap5-kaminari-views'
+gem 'kaminari'

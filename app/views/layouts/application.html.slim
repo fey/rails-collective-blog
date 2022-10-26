@@ -1,12 +1,34 @@
 doctype html
-html
+html class='h-100'
   head
-    title
-      | CollectiveBlog
-    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    title = t('.app_name')
+    meta[name='viewport' content='width=device-width,initial-scale=1']
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
-  body
-    = yield
+  body.d-flex.flex-column.h-100
+    .container.mb-2
+      .d-flex.flex-wrap.align-items-center.py-2.border-bottom
+        .navbar.navbar-expand-md.navbar-light.me-auto
+          = link_to root_path, class: 'navbar-brand.me-md-4'
+            = image_tag 'hexlet_logo.jpg', width: '30'
+        ul.nav.nav-pills
+          - if user_signed_in?
+            li.nav-item.me-2
+              p.nav-link.disabled = current_user.email
+            li.nav-item.me-2
+              / = link_to t('.add_post'), new_post_path, class: 'nav-link link-dark'
+            li.nav-item.me-2
+              = link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: 'delete' }, class: 'nav-link link-dark'
+          - else
+            li.nav-item.me-2
+              = link_to t('.sign_in'), new_user_session_path, class: 'nav-link link-dark'
+            li.nav-item.me-2
+              = link_to t('.sign_up'), new_user_registration_path, class: 'nav-link link-dark'
+
+    .container.my-4
+      = render 'shared/flash'
+      - if content_for?(:title)
+        h1 = yield :title
+      = yield

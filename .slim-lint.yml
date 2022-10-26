@@ -1,6 +1,0 @@
-exclude:
-  - 'app/views/devise/**/*.slim'
-
-linters:
-  LineLength:
-    max: 180

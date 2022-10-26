@@ -7,9 +7,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
-    # @comments = @post.comments.roots.latest
-    # @comment = current_user&.comments&.build
-    # @user_like = @post.likes.find_by(user: current_user)
+    @comments = @post.comments.roots.latest
+    @comment = current_user&.comments&.build
+    @user_like = @post.likes.find_by(user: current_user)
   end
 
   def new
@@ -21,7 +21,6 @@ class PostsController < ApplicationController
   def create
     authenticate_user!
     @categories = Category.all
-    # @post = current_user.posts.build(post_params)
 
     @post = Post.create(post_params.merge({ creator: current_user }))
 

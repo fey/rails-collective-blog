@@ -9,6 +9,6 @@
           .card-text.mb-2
             = post.body
           .text-right.small.text-muted.mt-auto
-            / span.me-2 = t('.liked_count', count: post.likes.count)
+            span.me-2 = t('.liked_count', count: post.likes.count)
             span.me-2 = distance_of_time_in_words_to_now(post.created_at)
             span = post.creator.email

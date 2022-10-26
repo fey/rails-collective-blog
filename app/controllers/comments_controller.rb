@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
       redirect_to @post
     else
       flash.now[:error] = @comment.errors.first.full_message
-      render 'posts/show'
+      render 'posts/show', status: :unprocessable_entity
     end
   end
 

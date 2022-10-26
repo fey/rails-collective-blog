@@ -86,12 +86,12 @@ group :test do
 end
 
 gem 'ancestry'
-gem 'devise-bootstrap-views'
+gem 'bootstrap5-kaminari-views'
 gem 'devise'
+gem 'devise-bootstrap-views'
 gem 'devise-i18n'
+gem 'kaminari'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'bootstrap5-kaminari-views'
-gem 'kaminari'

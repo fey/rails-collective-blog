@@ -86,3 +86,5 @@ end
 
 gem 'sentry-rails'
 gem 'sentry-ruby'
+gem 'slim-rails'
+gem 'simple_form'

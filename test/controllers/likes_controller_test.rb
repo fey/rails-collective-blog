@@ -22,12 +22,14 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
 
-  test '#destroy by other' do
-    user = users(:two)
-    sign_in user
-    delete post_like_url(@post, @like)
+  test '#destroy by other user' do
+    other_user = users(:two)
+    sign_in other_user
+    like = post_likes(:one)
 
+    delete post_like_path(@post, like)
     assert_response :redirect
-    assert 
+
+    assert { PostLike.exists?(like.id) }
   end
 end

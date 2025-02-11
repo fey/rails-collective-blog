@@ -13,10 +13,10 @@ class LikesController < ApplicationController
   def destroy
     authenticate_user!
 
-    like = PostLike.find(params[:id])
-    post = like.post
+    like = PostLike.find_by(id: params[:id], user: current_user)
+    post = Post.find(params[:post_id])
 
-    like&.delete
+    like&.destroy
     redirect_to post
   end
 end

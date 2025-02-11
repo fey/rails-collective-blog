@@ -1,3 +1,6 @@
+PORT?=3000
+RACK_ENV?=development
+
 lint:
 	bundle exec rubocop
 	bundle exec slim-lint app/views/
@@ -35,4 +38,4 @@ render-build:
 	bundle exec rails db:migrate
 
 render-start:
-	bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}
+	bundle exec puma -t 5:5 -p ${PORT} -e ${RACK_ENV}

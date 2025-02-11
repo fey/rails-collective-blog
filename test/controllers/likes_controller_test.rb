@@ -21,4 +21,13 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
   end
+
+  test '#destroy by other' do
+    user = users(:two)
+    sign_in user
+    delete post_like_url(@post, @like)
+
+    assert_response :redirect
+    assert 
+  end
 end

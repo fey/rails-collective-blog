@@ -7,7 +7,8 @@ lint-fix:
 
 .PHONY: test
 
-setup: install build prepare-db
+setup: install prepare-db
+	bin/rails assets:precompile
 
 install:
 	bin/setup
